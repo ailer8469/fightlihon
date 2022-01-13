@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Open Sans';
+}
+
+#canvas{
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+}
+.wrapper{
+    border: 2px solid rgb(18, 46, 81);
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url('img/bg.jpg');
+    background-size: 160%;
+    background-position: bottom;
+    overflow: hidden;
+}
+
+.score{
+    font-size: 150px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translate(-50%,0);
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    text-shadow: 0 0 10px rgb(0, 229, 255);
+}
+
+.countdown{
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(18, 46, 81,0.6);
+    letter-spacing:5px;
+    white-space: nowrap;
+}
+button{
+    display: inline-block;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 20px 70px;
+    z-index: 200;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+    background: black;
+	letter-spacing: 3px;
+    font-size: 14px;
+    overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.25,0.1,0.2,1);
+}
+button::before, button::after{
+    position: absolute;
+	content: '';
+	display: block;
+}
+button::before{
+    top: -120px;
+    left: 50px;
+    z-index: -1;
+    width: calc(100% + 200px);
+    height: 120px;
+    transition: all 0.4s cubic-bezier(0.25,0.1,0.2,1);
+    transform: skew(70deg);
+    background: rgb(0, 229, 255);
+}
+button::after{
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border: 1px solid #fff;
+}
+button:hover{
+    color:black;
+}
+button:hover::before{
+    left: -90px;
+	top: -20px;
+}
+.gameBox{
+    cursor: url("./img/bat.png"), default;
+    width: 1000px;
+    height: 400px;
+    margin: 380px auto;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hole{
+    flex: 1 0 33.33%; 
+    position: relative;
+    overflow: hidden;
+}
+.hole::after{
+    content: '';
+    display: block;
+    background-image: url('img/show3.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    z-index: 2;
+    bottom:-40px;
+    left: 30px;
+    background-size: contain;
+}
+
+.mole{
+    background-image: url('img/lihongo.png');
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.mole.small{
+    background-size: 65%;
+}
+.mole.large{
+    background-size: 68%;
+}
+.hole.up .mole{
+    top: -20%;
+}

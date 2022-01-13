@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="style.css">
+    <title>打擊力宏</title>
+</head>
+<body>
+    <audio preload autoplay loop id="music">
+        <source src="./img/KissGoodbye.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hitSuccess" src="img/nohit.mp3"></audio>
+    <canvas id="canvas"></canvas>
+    <div class="wrapper">
+        <div class="score">0</div>
+        <div class="countdown">CountDown</div>
+        <button class="startBtn" id="startBtn">Start</button>
+        <div class="gameBox">
+            <div class="hole hole1">
+                <div class="mole small"></div>
+            </div>
+            <div class="hole hole2">
+                <div class="mole small"></div>
+            </div>
+            <div class="hole hole3">
+                <div class="mole small"></div>
+            </div>
+            <div class="hole hole4">
+                <div class="mole large"></div>
+            </div>
+            <div class="hole hole5">
+                <div class="mole large"></div>
+            </div>
+            <div class="hole hole6">
+                <div class="mole large"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="snow.js"></script>
+</body>
+</html>
