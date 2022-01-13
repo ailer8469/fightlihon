@@ -76,6 +76,7 @@ function startGame(){
 }
 
 startButton.addEventListener('click', startGame );
+startButton.addEventListener('touchstart', startGame );
 
 function whack(e){
     document.querySelector('#hitSuccess').play();
@@ -99,9 +100,12 @@ function whack(e){
 
 // 所有moles都加上事件
 moles.forEach(mole => mole.addEventListener('click' , whack , false));
-
+moles.forEach(mole => mole.addEventListener('touchstart' , whack , false));
 
 let music = document.getElementById("music");
 window.addEventListener('mousemove', function(){
+    music.play();
+})
+window.addEventListener('touchstart', function(){
     music.play();
 })

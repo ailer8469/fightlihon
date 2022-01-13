@@ -5,7 +5,11 @@
 }
 
 body{
+    width: 100%;
+    height: 100%;
     font-family:'Open Sans';
+    background-color: #fff;
+    overflow: hidden;
 }
 
 #canvas{
@@ -19,14 +23,15 @@ body{
 }
 .wrapper{
     border: 2px solid rgb(18, 46, 81);
-    width: 1200px;
+    width: 1000px;
     height: 800px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     background-image: url('img/bg.jpg');
-    background-size: 160%;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: bottom;
     overflow: hidden;
 }
@@ -153,4 +158,102 @@ button:hover::before{
 }
 .hole.up .mole{
     top: -20%;
+}
+
+@media screen and (max-width: 1050px) {
+    .wrapper{
+        width: 800px;
+    }
+    .gameBox{
+        width: 650px;
+    }
+    .hole::after {
+        width: 93%;
+        height: 134px;
+        bottom: -75px;
+        left: 15px;
+    }
+    .mole{
+        top: 60%;
+    }
+    .hole.up .mole{
+        top: -17%;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .wrapper{
+        width: 600px;
+    }
+    .gameBox{
+        width: 500px;
+        height: 370px;
+    }
+    .hole::after {
+        bottom: -85px;
+    }
+    .mole.small{
+        background-size: 80%;
+    }
+    .mole.large{
+        background-size: 100%;
+    }
+    .hole.up .mole{
+        top: -14%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .wrapper{
+        width: 450px;
+        background-size: 520%;
+    }
+    .gameBox{
+        margin: 340px auto;
+        width: 400px;
+        height: 400px;
+    }
+    .hole::after {
+        width: 120%;
+        height: 134px;
+        left: -20px;
+    }
+    .mole.small{
+        background-size: 90%;
+    }
+    .mole.large{
+        background-size: 110%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper{
+        width: 340px;
+        background-size: 800%;
+    }
+    .score {
+        font-size: 130px;
+    }
+    .countdown {
+        top: 20%;
+        font-size: 15px;
+        white-space: normal; 
+    }
+    button {
+        top: 32%;
+        padding: 20px 50px;
+    }
+    .gameBox{
+        width: 90%; 
+    }
+    .hole {
+        flex: 1 0 50%;
+    }
+    .mole.small,.mole.large{
+        background-size: 100%;
+    }
+    .mole.larger{
+        background-size: 110%;
+    }
 }
