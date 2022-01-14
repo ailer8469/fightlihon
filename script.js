@@ -4,6 +4,7 @@ const moles = document.querySelectorAll('.mole');
 const countdownBoard = document.querySelector('.countdown');
 const startButton = document.querySelector('#startBtn');
 const box = document.querySelector('.gameBox');
+const highScoreBoard = document.querySelector('.highScore');
 
 let lastHole;
 // 若為true，則為時間到
@@ -11,6 +12,9 @@ let timeUp = false;
 let timeLimit = 20000;
 let score = 0;
 let countdown;
+// 最高分數
+let highScore = localStorage.getItem('game1HighScore') || 0;
+highScoreBoard.textContent = 'HIGH SCORE : ' + highScore ;
 
 
 function pickRandomHole(holes){
@@ -69,10 +73,20 @@ function startGame(){
         if( countdown < 0){
             countdown = 0;
             clearTimeout(startCountdown);
+            checkHightScore();
             countdownBoard.style.width = 'auto';
             countdownBoard.textContent = '時間結束！你成功打擊了' + score + '次力宏！';
         }
     }, 1000);
+}
+
+function checkHightScore(){
+    // 分數比記錄的還高
+    if( score > localStorage.getItem('game1HighScore')){
+        localStorage.getItem('game1HighScore', score);
+        highScore = score;
+        highScoreBoard.textContent = 'HIGH SCORE : ' + highScore ;
+    }
 }
 
 startButton.addEventListener('click', startGame );

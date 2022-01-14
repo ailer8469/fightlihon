@@ -21,6 +21,14 @@ body{
     height: 100%;
     z-index: 101;
 }
+.highScore{
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: white;
+}
 .wrapper{
     border: 2px solid rgb(18, 46, 81);
     width: 1000px;
