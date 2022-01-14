@@ -233,8 +233,11 @@ button:hover::before{
     .mole.large{
         background-size: 110%;
     }
+    .highScore{
+        left: 15px;
+        top: 15px;
+    }
 }
-
 @media screen and (max-width: 480px) {
     body{
         height: auto;
@@ -262,6 +265,11 @@ button:hover::before{
     }
     .hole {
         flex: 1 0 50%;
+    }
+    .highScore{
+        text-align: center;
+        margin-top: 5px;
+        position: static;
     }
     .mole.small,.mole.large{
         background-size: 100%;
